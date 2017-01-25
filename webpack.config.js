@@ -2,7 +2,7 @@ const config = {
   entry: './client/index.jsx',
   output: {
     filename: 'bundle.js',
-    path: './client'
+    path: './public'
   },
   module: {
     loaders: [
