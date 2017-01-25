@@ -2,7 +2,7 @@ const config = {
   entry: './client/index.jsx',
   output: {
     filename: 'bundle.js',
-    path: './public'
+    path: './client'
   },
   module: {
     loaders: [
@@ -11,7 +11,7 @@ const config = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ["react", "es2015"]
         }
       }
     ]
