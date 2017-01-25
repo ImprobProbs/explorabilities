@@ -1,5 +1,5 @@
 const config = {
-  entry: './jsx/index.jsx',
+  entry: './client/index.jsx',
   output: {
     filename: 'bundle.js',
     path: './public'
