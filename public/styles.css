@@ -45,18 +45,39 @@ h1 {
 }
 
 .itineraryItem {
-  margin: 0px 3px 0px 3px;
+  margin: 20px 0px 30px 0px;
 }
 
 #exploreButton {
-  float: left;
+  position: absolute;
+  left: 330px;
+  top: 12px;
+  background-image: linear-gradient(to bottom, #d98934, #47280d);
+  border-radius: 10px;
+  font-family: 'Shadows Into Light', cursive;
+  color: white;
+  font-size: 20px;
+  text-decoration: bold;
+  padding: 2px 20px 2px 20px;
+  border: solid #f7e4c6 2px;
 }
 
 #googleMaps {
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 20px;
 }
+
+#place {
+  background-color: white;
+  position: absolute;
+  top: 60px;
+  left: 850px;
+  height: 330px;
+  width: 550px;
+  border-radius: 5px;
+}
+
 #authBody {
 }
 

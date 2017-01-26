@@ -3,7 +3,7 @@ import reactDOM from 'react-dom';
 import Search from './components/Search.jsx';
 import ItineraryList from './components/itineraryList.jsx';
 import MapContainer from './components/MapContainer.jsx'
-
+import Place from './components/Place.jsx'
 
 export default class App extends React.Component {
 
@@ -16,7 +16,8 @@ export default class App extends React.Component {
       <div>
         <Search />
         <MapContainer />
-        <ItineraryList list = {[1,2,3]}/>
+        <Place />
+        <ItineraryList list = {[1,2,3,4,5]}/>
       </div>
     );
   }
