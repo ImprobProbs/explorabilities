@@ -9,7 +9,7 @@ routes.use(bodyParser.json());
 
 routes.use(express.static('../public'));
 
-routes.get('/users', controller.users.retrieve);
-routes.post('/users', controller.users.create);
+routes.get('/users/signin', controller.users.signin);
+routes.post('/users/create', controller.users.create);
 
 module.exports = routes;

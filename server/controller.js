@@ -2,7 +2,7 @@ const User = require('./db/users.js');
 
 const controller = {
   users: {
-    retrieve: (req, res, next) => {
+    signin: (req, res, next) => {
       //Retrieve user from DB and authenticate
       User.findOne({
         where: {
@@ -19,7 +19,8 @@ const controller = {
       //Ensure user does not already exixt then create new user
       User.findOrCreate({
         where: {
-          email: req.body.email
+          email: req.body.email,
+          password: req.body.password
         }
       }).spread((user, created) => {
         if (created) {
