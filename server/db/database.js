@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
+const cfg = require('./dbconfig_gitignoreme.js')
 
-const sequelize = new Sequelize('Drock', 'Drock', '', {
+const sequelize = new Sequelize(cfg.myLocalDB, cfg.myLocalDBRole, cfg.myLocalDBPW, {
   host: 'localhost',
   dialect: 'postgres',
   pool: {
