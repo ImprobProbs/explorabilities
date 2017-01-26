@@ -71,17 +71,19 @@ h1 {
 }
 
 #itinerary, #place {
-  display: inline-block;
+  /*display: inline-block;*/
   height: 350px;
   width: 40%;
   border-radius: 5px;
 }
 
 #itinerary {
+  float: right;
   background-color: blue;
 }
 
 #place {
+  float: left;
   background-color: green;
 }
 
