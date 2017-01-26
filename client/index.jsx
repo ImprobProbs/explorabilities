@@ -9,8 +9,8 @@ import Signup from './auth/signup.jsx';
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/auth" component={Auth}>
-      <Route path="/signin" component={Signin}/>
-      <Route path="/signup" component={Signup}/>
+      <Route path="/auth/signin" component={Signin}/>
+      <Route path="/auth/signup" component={Signup}/>
     </Route>
     <Route path="/" component={App}>
     </Route>

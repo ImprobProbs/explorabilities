@@ -10,4 +10,4 @@ compiled/
 public/bundle.js
 
 ## API keys ##
-public/config/keys.js
+client/config/keys.js
