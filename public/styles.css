@@ -1,4 +1,77 @@
 body {
-    background: #89cff0;
-    font-size: 50px;
+  background: #89cff0;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.container {
+  width: 920px;
+  margin: 20px auto;
+}
+
+.beautify {
+  font-family: 'Kaushan Script', cursive;
+}
+
+#authBody {
+}
+
+#authContainer {
+  background-color: white;
+  padding: 30px 40px;
+  margin: 0 auto;
+  width: 570px;
+}
+
+#authContent {
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+#signin, #signup {
+  padding: 20px;
+  height: 230px;
+}
+
+#signin h2, #signup h2 {
+  margin-bottom: 20px;
+}
+
+#signin input, #signup input {
+  box-shadow: none;
+  border-radius: 3px;
+  border: 1px solid #d8d8d8;
+  height: 30px;
+  width: 200px;
+  font-size: 14px;
+  padding: 0 5px;
+  margin-bottom: 5px;
+}
+
+.btn, #authNav button {
+  background-color: white;
+  height: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  box-shadow: inset 0px 1px 0px 0px #FFF;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  color: #666;
+  text-shadow: 0px 1px 0px #FFF;
+  font-size: 12px;
+  height: 30px;
+  width: 70px;
+}
+
+.btn {
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #FFF 5%, #f6f6f6 100%);
 }
