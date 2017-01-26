@@ -6,11 +6,12 @@ html, body {
 }
 
 html {
-  background: #c2e59c;
-  background: linear-gradient(to bottom right, #64b3f4, #c2e59c);
+  /*background: #c2e59c;
+  background: linear-gradient(to bottom right, #64b3f4, #c2e59c);*/
 }
 
 body {
+  background-image: url('img/island.jpg');
   font-family: 'Lato', sans-serif;
 }
 
@@ -32,6 +33,63 @@ h1 {
 
 .beautify {
   font-family: 'Kaushan Script', cursive;
+}
+
+#searchForm {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  width: 20%;
+  margin: 20px auto;
+}
+
+#mapEmbed {
+  width: 800px;
+  height: 650px;
+}
+
+#itinerary {
+  position: absolute;
+  left: 850px;
+  top: 400px;
+  height: 280px;
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.itineraryItem {
+  margin: 20px 0px 30px 0px;
+}
+
+#exploreButton {
+  position: absolute;
+  left: 330px;
+  top: 12px;
+  background-image: linear-gradient(to bottom, #d98934, #47280d);
+  border-radius: 10px;
+  font-family: 'Shadows Into Light', cursive;
+  color: white;
+  font-size: 20px;
+  text-decoration: bold;
+  padding: 2px 20px 2px 20px;
+  border: solid #f7e4c6 2px;
+}
+
+#googleMaps {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
+
+#place {
+  background-color: white;
+  position: absolute;
+  top: 60px;
+  left: 850px;
+  height: 330px;
+  width: 550px;
+  border-radius: 5px;
 }
 
 #authBody {
