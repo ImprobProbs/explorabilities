@@ -23,17 +23,20 @@ export default class Nav extends React.Component {
 
   handleChange(e) {
     this.setState({query: e.target.value});
+    console.log('something')
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
     axios.post('SERVER OVERLORD MAKE ME AN ENDPOINT TO QUERY GOOGLE MAPS API', {
-      query: this.state.query
+      data: {
+        query: 'Cancun' /*this.state.query*/
+      }
     })
     .then(function(response){
       //AXIOS GET THE MAP
-      //RENDER THE MAP...SOMEHOW
+      //SOME CALLBACK(response)
       console.log(response.data);
       console.log(response.status);
     }).catch(function(error) {

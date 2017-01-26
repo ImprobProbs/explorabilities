@@ -2,8 +2,8 @@ import React from 'react';
 import reactDOM from 'react-dom';
 import Nav from './components/Nav.jsx';
 import ItineraryList from './components/itineraryList.jsx';
-import MapContainer from './components/MapContainer.jsx'
-import Place from './components/Place.jsx'
+import MapContainer from './components/MapContainer.jsx';
+import Place from './components/Place.jsx';
 import data from "./stubs.js";
 
 export default class App extends React.Component {
@@ -31,7 +31,7 @@ export default class App extends React.Component {
           "hotSpot": ["Central Park", "Broadway Theatre", "Statue of Loberty"]
         }
       ]
-    }
+    };
   }
   render() {
     return (
