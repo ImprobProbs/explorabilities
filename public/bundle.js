@@ -21516,6 +21516,10 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _Search = __webpack_require__(180);
+
+	var _Search2 = _interopRequireDefault(_Search);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21527,20 +21531,16 @@
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	  }
 
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'p',
-	        null,
-	        'okay'
-	      );
+	      return _react2.default.createElement(_Search2.default, null);
 	    }
 	  }]);
 
@@ -21548,6 +21548,38 @@
 	}(_react2.default.Component);
 
 	exports.default = App;
+
+/***/ },
+/* 179 */,
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Search = function Search() {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "search-bar form-inline" },
+	    _react2.default.createElement("input", { className: "form-control", type: "text" }),
+	    _react2.default.createElement(
+	      "button",
+	      { className: "btn hidden-sm-down" },
+	      "Explore!"
+	    )
+	  );
+	};
+
+	exports.default = Search;
 
 /***/ }
 /******/ ]);
