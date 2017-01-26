@@ -2,6 +2,13 @@ import React from 'react';
 import axios from 'axios';
 
 export default class Signin extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      error: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
   render () {
     return (
       <div id="signin">
@@ -15,15 +22,17 @@ export default class Signin extends React.Component {
           </div>
           <button type="submit" className="btn">Signin</button>
         </form>
-        <div className="error"></div>
+        <div className="error">{this.state.error}</div>
       </div>
     );
   }
 
   handleSubmit (e) {
+    console.log(this);
     e.preventDefault();
     const email = e.target.querySelector('[name="email"]').value;
     const password = e.target.querySelector('[name="password"]').value;
+    const context = this;
 
     axios.get('/users/signin', {
       params: {
@@ -31,9 +40,14 @@ export default class Signin extends React.Component {
         password: password
       }
     })
-    .then(function(response){
+    .then(function(response) {
       console.log(response.data);
       console.log(response.status);
+    })
+    .catch((err) => {
+      context.setState({
+        error: err.response.data
+      });
     });
   }
 };
