@@ -19,11 +19,4 @@ User.validatePW = (enteredPW, storedPW) => {
   return bcrypt.compareSync(enteredPW, storedPW)
 };
 
-User.sync({force: true}).then(function () {
-  return User.create({
-    email: 'dthomasy@gmail.com',
-    password: bcrypt.hashSync('Young', bcrypt.genSaltSync(8))
-  });
-});
-
 module.exports = User;

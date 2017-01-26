@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "webpack --config webpack.config.js --watch"
+    "start": "webpack --config webpack.config.js --watch",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
