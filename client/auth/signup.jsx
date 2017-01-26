@@ -1,3 +1,4 @@
+import React from 'react';
 import {Link} from 'react-router';
 
 const Signup = () => {
@@ -12,12 +13,7 @@ const Signup = () => {
         </div>
         <button type="submit" className="btn signup-button">Signup</button>
       </form>
-      <div class="error"></div>
-      <div>
-        <Link to="signin">
-          <button className="btn signup-button">Signin</button>
-        </Link>
-      </div>
+      <div className="error"></div>
     </div>
   );
 };
