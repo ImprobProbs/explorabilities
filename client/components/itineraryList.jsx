@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItineraryList = (props)  => (
-  <ul>
+  <ul className="itinerary">
     {props.list.map(function(listValue){
       return <li key={listValue}>{listValue}</li>;
     })}
