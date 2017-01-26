@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack --config webpack.config.js --watch"
+    "start": "webpack --config webpack.config.js --watch"
   },
   "repository": {
     "type": "git",
