@@ -9,7 +9,6 @@ export default class Auth extends React.Component {
           <div id="authHeader">
             <h1>Welcome to <span className="beautify">Explorabilities</span></h1>
           </div>
-          <img src="img/palmtree.png"></img>
           <div id="authContent">
             {React.cloneElement(this.props.children, {formSubmit: this.formSubmit})}
           </div>
@@ -21,6 +20,7 @@ export default class Auth extends React.Component {
               <button>Signup</button>
             </Link>
           </div>
+          <img src="img/palmtree.png"></img>
         </div>
       </div>
     );

@@ -51,6 +51,7 @@ h1 {
   position: absolute;
   left: -40px;
   top: -20px;
+  z-index: -1;
 }
 
 #signin, #signup {
