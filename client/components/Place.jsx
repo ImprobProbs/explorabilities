@@ -8,7 +8,13 @@ class Place extends React.Component {
   render() {
     return (
       <div id='place'>
-        <img src="../../public/img/833.jpg" />
+        <img src="img/833.jpg" height="100" width="100"/>
+        <ul>
+          <li>More place info</li>
+          <li>More place info</li>
+          <li>More place info</li>
+          <li>More place info</li>
+        </ul>
       </div>
     )
   }

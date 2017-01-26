@@ -20,7 +20,6 @@ export default class Auth extends React.Component {
               <button>Signup</button>
             </Link>
           </div>
-          <img src="img/palmtree.png"></img>
         </div>
       </div>
     );

@@ -25,8 +25,8 @@ h1 {
 }
 
 .container {
-  width: 920px;
-  height: 100%;
+  width: 980px;
+  min-height: 100%;
   background-color: white;
   margin: 0 auto;
 }
@@ -36,26 +36,16 @@ h1 {
 }
 
 #searchForm {
-  position: absolute;
+  /*position: absolute;
   left: 20px;
-  top: 0px;
+  top: 0px;*/
   width: 20%;
   margin: 20px auto;
 }
 
 #mapEmbed {
-  width: 800px;
-  height: 650px;
-}
-
-#itinerary {
-  position: absolute;
-  left: 850px;
-  top: 400px;
-  height: 280px;
-  width: 400px;
-  background-color: white;
-  border-radius: 5px;
+  width: 600px;
+  height: 487px;
 }
 
 .itineraryItem {
@@ -63,9 +53,6 @@ h1 {
 }
 
 #exploreButton {
-  position: absolute;
-  left: 330px;
-  top: 12px;
   background-image: linear-gradient(to bottom, #d98934, #47280d);
   border-radius: 10px;
   font-family: 'Shadows Into Light', cursive;
@@ -77,20 +64,30 @@ h1 {
 }
 
 #googleMaps {
-  position: absolute;
-  top: 60px;
-  left: 20px;
+  /*position: absolute;*/
+  /*top: 60px;
+  left: 20px;*/
+}
+
+#itinerary, #place {
+  display: inline-block;
+  height: 350px;
+  width: 40%;
+  border-radius: 5px;
+}
+
+#itinerary {
+  background-color: blue;
 }
 
 #place {
-  background-color: white;
-  position: absolute;
-  top: 60px;
-  left: 850px;
-  height: 330px;
-  width: 550px;
-  border-radius: 5px;
+  background-color: green;
 }
+
+#exploreBody {
+  padding: 20px;
+}
+
 
 #authBody {
   padding-top: 40px;

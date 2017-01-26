@@ -39,9 +39,10 @@ export default class App extends React.Component {
         <div id="exploreContainer">
           <Search />
           <MapContainer />
-          <Place />
-          <ItineraryList list = {[1,2,3,4,5]}/>
-          <ItineraryList list = {this.state.data}/>
+          <div id="exploreContent">
+            <Place />
+            <ItineraryList list = {this.state.data}/>
+          </div>
         </div>
       </div>
     );
