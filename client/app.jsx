@@ -39,19 +39,10 @@ export default class App extends React.Component {
         <div id="exploreContainer">
           <Nav />
           <MapContainer />
-<<<<<<< 6f59f90c65de2722359b4e4cda1d8c18bf56cdd1
           <div id="exploreContent">
             <Place />
             <ItineraryList list = {this.state.data}/>
           </div>
-||||||| merged common ancestors
-          <Place />
-          <ItineraryList list = {[1,2,3,4,5]}/>
-          <ItineraryList list = {this.state.data}/>
-=======
-          <Place />
-          <ItineraryList list = {this.state.data}/>
->>>>>>> fix css
         </div>
       </div>
     );
