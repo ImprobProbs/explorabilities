@@ -5,13 +5,13 @@ const controller = {
     //Retrieve user from DB and authenticate
     User.findOne({
       where: {
-        email: req.body.email
+        email: req.query.email
       }
     }).then((user) => {
-      if (user && User.validatePW(req.body.password, user.password)) {
+      if (user && User.validatePW(req.query.password, user.password)) {
         return res.sendStatus(200);
       }
-      return res.sendStatus(403);
+      return res.status(403).send('Invalid e-mail or password');
     });
   },
   create: (req, res, next) => {
