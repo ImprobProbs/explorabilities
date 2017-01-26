@@ -5,7 +5,7 @@ class MapContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      place: "https://www.google.com/maps/embed/v1/search?key=AIzaSyA28QjAXO82XK34rdGHSBI8nQ8bSRmLQ6g&q=point_of_interest+in+Cancun"
+      place: "https://www.google.com/maps/embed/v1/search?key=AIzaSyA28QjAXO82XK34rdGHSBI8nQ8bSRmLQ6g&q=point_of_interest+near+Cancun"
     };
   }
 
@@ -23,6 +23,3 @@ class MapContainer extends React.Component {
 }
 
 export default MapContainer;
-// GoogleApiComponent({
-//   apiKey: __GAPI_KEY__
-// })(Container)
