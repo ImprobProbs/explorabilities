@@ -12,27 +12,27 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       data: [
-          {
-            "city": "SF",
-            "state": "CA",
-            "thingsToEat": ["california pizza", "sushirito"],
-            "hotSpot": ["Golden Gate Bridge", "Piers 19", "Muir Woods"]
-          },
-          {
-            "city": "Oakland",
-            "state": "CA",
-            "thingsToEat": ["Sushi", "Barbeque Chicken"],
-            "hotSpot": ["Lake Meritt", "Broadway St"]
-          },
-          {
-            "city": "NYC",
-            "state": "NY",
-            "thingsToEat": ["Buffalo Wings", "New York Pizza"],
-            "hotSpot": ["Central Park", "Broadway Theatre", "Statue of Loberty"]
-          }
-        ]
-      }
+        {
+          "city": "SF",
+          "state": "CA",
+          "thingsToEat": ["california pizza", "sushirito"],
+          "hotSpot": ["Golden Gate Bridge", "Piers 19", "Muir Woods"]
+        },
+        {
+          "city": "Oakland",
+          "state": "CA",
+          "thingsToEat": ["Sushi", "Barbeque Chicken"],
+          "hotSpot": ["Lake Meritt", "Broadway St"]
+        },
+        {
+          "city": "NYC",
+          "state": "NY",
+          "thingsToEat": ["Buffalo Wings", "New York Pizza"],
+          "hotSpot": ["Central Park", "Broadway Theatre", "Statue of Loberty"]
+        }
+      ]
     }
+  }
   render() {
     return (
       <div id="exploreBody">
