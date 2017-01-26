@@ -3,11 +3,33 @@ const User = require('./db/users.js');
 const controller = {
   users: {
     retrieve: (req, res, next) => {
-      //retrieve user from DB
+      //Retrieve user from DB and authenticate
+      User.findOne({
+        where: {
+          email: req.body.email
+        }
+      }).then((user) => {
+        if (user && User.validatePW(req.body.password, user.password)) {
+          return res.sendStatus(200);
+        }
+        return res.sendStatus(403);
+      });
     },
     create: (req, res, next) => {
-      //Create new user in DB
-      console.log(req.body, ' post user name req');
+      //Ensure user does not already exixt then create new user
+      User.findOrCreate({
+        where: {
+          email: req.body.email
+        }
+      }).spread((user, created) => {
+        if (created) {
+          console.log('User was successfully created');
+          return res.sendStatus(200);
+        } else {
+          console.log('User already exists')
+          return res.sendStatus(403);
+        }
+      });
     }
   }
 };
