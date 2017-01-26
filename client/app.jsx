@@ -2,6 +2,8 @@ import React from 'react';
 import reactDOM from 'react-dom';
 import Search from './components/Search.jsx';
 import ItineraryList from './components/itineraryList.jsx';
+import MapContainer from './components/MapContainer.jsx'
+
 
 export default class App extends React.Component {
 
@@ -13,10 +15,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Search />
-        <div id="googleMaps">
-          <iframe width="600" height="450" frameBorder="0" style={{border: 0}}
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJIQBpAG2ahYAR_6128GcTUEo&key=AIzaSyCBb0bm-_wNIf3oDMi-5PN_zeOf1bRWstI" allowFullScreen></iframe>
-        </div>
+        <MapContainer />
         <ItineraryList list = {[1,2,3]}/>
       </div>
     );

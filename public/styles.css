@@ -1,5 +1,6 @@
 body {
-  background: #89cff0;
+  background-image: url('img/island.jpg');
+  /*background: #89cff0;*/
   font-family: 'Lato', sans-serif;
 }
 
@@ -20,11 +21,42 @@ h1 {
   font-family: 'Kaushan Script', cursive;
 }
 
-.search-form {
+#searchForm {
+  position: absolute;
+  left: 20px;
+  top: 0px;
   width: 20%;
   margin: 20px auto;
 }
 
+#mapEmbed {
+  width: 800px;
+  height: 650px;
+}
+
+#itinerary {
+  position: absolute;
+  left: 850px;
+  top: 400px;
+  height: 280px;
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.itineraryItem {
+  margin: 0px 3px 0px 3px;
+}
+
+#exploreButton {
+  float: left;
+}
+
+#googleMaps {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
 #authBody {
 }
 
