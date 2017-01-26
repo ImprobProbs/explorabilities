@@ -6,6 +6,6 @@ node_modules/
 
 ## Compiled files ##
 compiled/
-bundle.js
+public/bundle.js
 
 ## API keys ##
