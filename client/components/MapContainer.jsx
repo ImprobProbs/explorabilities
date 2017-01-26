@@ -1,25 +1,51 @@
 import React from 'react';
-// import Map from './Map.jsx'
+import axios from 'axios'
 
-class MapContainer extends React.Component {
+export default class MapContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      place: "https://www.google.com/maps/embed/v1/search?key=AIzaSyA28QjAXO82XK34rdGHSBI8nQ8bSRmLQ6g&q=point_of_interest+near+Cancun"
+      query: 'Cancun',
+      key: 'AIzaSyCBb0bm-_wNIf3oDMi-5PN_zeOf1bRWstI'
     };
   }
 
   render() {
-    // if (!this.props.loaded) {
-    //   return <div>Loading...</div>
-    // }
     return (
-      <div id="googleMaps">
-        <iframe id="mapEmbed" frameBorder="0" style={{border: 10}}
-          src={this.state.place}></iframe>
-      </div>
-      )
-  }
-}
+      <div>
+        <form>
+          <input id="searchForm" type="text" value={this.state.query} onChange={this.updateQuery.bind(this)} />
+          <button type="submit" id="exploreButton">Explore!</button>
+        </form>
+        <div id="googleMaps">
+          <iframe id="mapEmbed" frameBorder="0" style={{border: 10}}
+            src={`https://www.google.com/maps/embed/v1/search?key=${this.state.key}&q=point_of_interest+near+${this.state.query}`}>
 
-export default MapContainer;
+          </iframe>
+        </div>
+      </div>
+    );
+  }
+
+  componentWillMount () {
+    // this.getKey();
+  }
+
+  getKey () {
+    axios.get('api/google/key')
+    .then(function(response){
+      //AXIOS GET THE MAP
+      //SOME CALLBACK(response)
+      console.log(response.data);
+      console.log(response.status);
+    }).catch(function(error) {
+      console.log(error);
+    });
+  }
+
+  updateQuery(e) {
+    this.setState({
+      query: e.target.value
+    });
+  }
+};
