@@ -5,16 +5,22 @@ export default class Auth extends React.Component {
 
   render () {
     return (
-      <div>
-        <h2>Welcome to <span className="beautify">Explorabilities</span></h2>
-        {this.props.children}
-        <div>
-          <Link to="signin">
-            <button className="btn signup-button">Signin</button>
-          </Link>
-          <Link to="signup">
-            <button className="btn signup-button">Signup</button>
-          </Link>
+      <div id="authBody">
+        <div id="authContainer">
+          <div id="authHeader">
+            <h1>Welcome to <span className="beautify">Explorabilities</span></h1>
+          </div>
+          <div id="authContent">
+            {this.props.children}
+          </div>
+          <div id="authNav">
+            <Link to="signin">
+              <button>Signin</button>
+            </Link>
+            <Link to="signup">
+              <button>Signup</button>
+            </Link>
+          </div>
         </div>
       </div>
     );
