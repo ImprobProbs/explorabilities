@@ -1,4 +1,6 @@
-const sequelize = new Sequelize('explore', 'root', '', {
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize('Drock', 'Drock', '', {
   host: 'localhost',
   dialect: 'postgres',
   pool: {

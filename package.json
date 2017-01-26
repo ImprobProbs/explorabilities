@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/ImprobProbs/explorabilities.git",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.16.0",
     "express": "^4.14.0",
     "react": "^15.4.2",

@@ -1,3 +1,4 @@
+const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 const db = require('./database.js');
 
@@ -10,11 +11,18 @@ const User = db.define('user', {
   }
 });
 
-// force: true will drop the table if it already exists
+User.generateHash = (password) => {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+};
+
+User.validatePW = (enteredPW, storedPW) => {
+  return bcrypt.compareSync(enteredPW, storedPW)
+};
+
 User.sync({force: true}).then(function () {
   return User.create({
     email: 'dthomasy@gmail.com',
-    password: 'Young'
+    password: bcrypt.hashSync('Young', bcrypt.genSaltSync(8))
   });
 });
 
