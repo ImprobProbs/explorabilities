@@ -26,4 +26,4 @@ export default class Auth extends React.Component {
   }
 };
 
-// {/* {React.cloneElement(this.props.children, {formSubmit: this.formSubmit})} */}
+// {React.cloneElement(this.props.children, {formSubmit: this.formSubmit})}
