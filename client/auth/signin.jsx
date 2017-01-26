@@ -41,6 +41,7 @@ export default class Signin extends React.Component {
       }
     })
     .then(function(response) {
+      console.log('hi')
       console.log(response.data);
       console.log(response.status);
     })
