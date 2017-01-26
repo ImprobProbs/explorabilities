@@ -2,11 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 export default class Signin extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.submit = this.handleSubmit.bind(this);
-  }
-
   render () {
     return (
       <div id="signin">

@@ -10,7 +10,7 @@ export default class Auth extends React.Component {
             <h1>Welcome to <span className="beautify">Explorabilities</span></h1>
           </div>
           <div id="authContent">
-            {React.cloneElement(this.props.children, {formSubmit: this.formSubmit})}
+            {this.props.children}
           </div>
           <div id="authNav">
             <Link to="auth/signin">
@@ -26,3 +26,5 @@ export default class Auth extends React.Component {
     );
   }
 };
+
+// {/* {React.cloneElement(this.props.children, {formSubmit: this.formSubmit})} */}
