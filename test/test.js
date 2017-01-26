@@ -13,8 +13,9 @@ describe('Database functionality', function() {
           password: 'acoolpw123!'
         }
       })
-      .on('response' , function () {
-        console.log('res')
+      .on('response' , function (res) {
+        chai.expect(res.statusCode).to.equal(201);
+
         User.findOne({
           where: {
             email: 'fortysixandtwo@hotmail.com'
