@@ -1,6 +1,6 @@
 import React from 'react';
 import reactDOM from 'react-dom';
-import Search from './components/Search.jsx';
+import Nav from './components/Nav.jsx';
 import ItineraryList from './components/itineraryList.jsx';
 import MapContainer from './components/MapContainer.jsx'
 import Place from './components/Place.jsx'
@@ -37,7 +37,7 @@ export default class App extends React.Component {
     return (
       <div id="exploreBody">
         <div id="exploreContainer">
-          <Search />
+          <Nav />
           <MapContainer />
           <div id="exploreContent">
             <Place />
