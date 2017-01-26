@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "webpack --config webpack.config.js --watch",
-    "test": "mocha"
+    "test": "mocha",
+    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"
   },
   "repository": {
     "type": "git",
