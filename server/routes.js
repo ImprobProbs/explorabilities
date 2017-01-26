@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const controller = require('./controller.js');
+const userCtrl = require('./userController.js');
 const routes = express();
 
 //Parse incoming body
@@ -9,7 +9,7 @@ routes.use(bodyParser.json());
 
 routes.use(express.static('../public'));
 
-routes.get('/users/signin', controller.users.signin);
-routes.post('/users/create', controller.users.create);
+routes.get('/users/signin', userCtrl.signin);
+routes.post('/users/create', userCtrl.create);
 
 module.exports = routes;
