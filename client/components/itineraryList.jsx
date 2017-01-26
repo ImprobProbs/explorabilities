@@ -2,10 +2,9 @@ import React from 'react';
 
 const ItineraryList = (props)  => (
   <ul id="itinerary">
-    {props.list.map(function(listValue){
-      // return <li className= "itineraryItem" key={listValue}>{listValue}</li>;
+    {props.list.map(function(listValue, index){
       return (
-        <li key={listValue.city}>
+        <li key={index}>
          <a href ="#">City: {listValue.city}</a>
          <a href ="#">State: {listValue.state}</a>
          <a href ="#">Things To Eat: {listValue.thingsToEat}</a>
