@@ -1,11 +1,23 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+html {
+  /*background: #c2e59c;
+  background: linear-gradient(to bottom right, #64b3f4, #c2e59c);*/
+}
+
 body {
   background-image: url('img/island.jpg');
-  /*background: #89cff0;*/
   font-family: 'Lato', sans-serif;
 }
 
 h1, h2, h3, h4, p {
   margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -14,7 +26,9 @@ h1 {
 
 .container {
   width: 920px;
-  margin: 20px auto;
+  height: 100%;
+  background-color: white;
+  margin: 0 auto;
 }
 
 .beautify {
@@ -79,10 +93,10 @@ h1 {
 }
 
 #authBody {
+  padding-top: 40px;
 }
 
 #authContainer {
-  background-color: white;
   padding: 30px 40px;
   margin: 0 auto;
   width: 570px;
@@ -91,6 +105,13 @@ h1 {
 #authContent {
   box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
+}
+
+#authBody img {
+  position: absolute;
+  left: -40px;
+  top: -20px;
+  z-index: -1;
 }
 
 #signin, #signup {

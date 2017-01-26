@@ -35,15 +35,15 @@ export default class App extends React.Component {
     }
   render() {
     return (
-      <div>
-        <Search />
-        <MapContainer />
-        <Place />
-        <ItineraryList list = {[1,2,3,4,5]}/>
-        <ItineraryList list = {this.state.data}/>
+      <div id="exploreBody">
+        <div id="exploreContainer">
+          <Search />
+          <MapContainer />
+          <Place />
+          <ItineraryList list = {[1,2,3,4,5]}/>
+          <ItineraryList list = {this.state.data}/>
+        </div>
       </div>
     );
   }
 }
-
-
