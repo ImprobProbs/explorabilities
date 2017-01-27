@@ -8,6 +8,8 @@ const controller = {
         email: req.query.email
       }
     }).then((user) => {
+      console.log(req.query.password);
+      console.log(user.password);
       if (user && User.validatePW(req.query.password, user.password)) {
         return res.sendStatus(200);
       }

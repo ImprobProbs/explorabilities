@@ -22,7 +22,7 @@ export default class Signin extends React.Component {
           </div>
           <button type="submit" className="btn">Signin</button>
         </form>
-        <div className="error">{this.state.error}</div>
+        <div className="error-text">{this.state.error}</div>
       </div>
     );
   }
