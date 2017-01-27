@@ -14,7 +14,7 @@ export default class Signup extends React.Component {
           </div>
           <button type="submit" className="btn">Signup</button>
         </form>
-        <div className="error"></div>
+        <div className="error-text"></div>
       </div>
     );
   }
@@ -35,4 +35,4 @@ export default class Signup extends React.Component {
       console.log(error);
     });
   }
-};
+}

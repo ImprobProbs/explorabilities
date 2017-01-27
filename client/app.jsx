@@ -39,7 +39,7 @@ export default class App extends React.Component {
         <div id="exploreContainer">
           <Nav />
           <MapContainer />
-          <div id="exploreContent">
+          <div id="exploreContent" className="clearfix">
             <Place />
             <ItineraryList list = {this.state.data}/>
           </div>

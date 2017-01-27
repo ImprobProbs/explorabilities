@@ -110,9 +110,6 @@ h1 {
   background-color: green;
 }
 
-
-
-
 #authBody {
   padding-top: 40px;
 }
@@ -154,6 +151,20 @@ h1 {
   font-size: 14px;
   padding: 0 5px;
   margin-bottom: 5px;
+}
+
+.clearfix:after {
+  content: " "; /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.error-text {
+  padding-top: 10px;
+  font-size: 12px;
+  color: red;
 }
 
 .btn, #authNav button {
