@@ -8,6 +8,8 @@ export default class Nav extends React.Component {
   render() {
     return (
       <div id='nav'>
+        <button className="btn" id="myPlaces">My Places</button>
+        <button className="btn" id="exploreButton">Explore!</button>
         <button className="btn" id="logout">log out</button>
       </div>
     );
