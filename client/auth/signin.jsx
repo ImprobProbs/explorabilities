@@ -41,8 +41,9 @@ export default class Signin extends React.Component {
       }
     })
     .then(function(response) {
-      console.log(response.data);
-      console.log(response.status);
+      if (response.status === 200) {
+        this.context.router.transitionTo('/');
+      }
     })
     .catch((err) => {
       context.setState({
