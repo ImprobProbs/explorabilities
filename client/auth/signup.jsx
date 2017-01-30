@@ -1,11 +1,20 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class Signup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   render () {
     return (
       <div id="signup">
         <h2>Manage your next vacation. Find things-to-do and local events and store it all in one place.</h2>
-        <form name="signupForm" onSubmit={this.submit}>
+        <form name="signupForm" onSubmit={this.handleSubmit}>
           <div>
             <input type="email" name="email" placeholder="Email" required />
           </div>
@@ -14,7 +23,7 @@ export default class Signup extends React.Component {
           </div>
           <button type="submit" className="btn">Signup</button>
         </form>
-        <div className="error-text"></div>
+        <div className="error-text">{this.state.error}</div>
       </div>
     );
   }
@@ -28,11 +37,13 @@ export default class Signup extends React.Component {
       email: email,
       password: password
     })
-    .then(function(response){
+    .then(function(response) {
       console.log(response.data);
       console.log(response.status);
     }).catch(function(error) {
-      console.log(error);
+      context.setState({
+        error: err.response.data
+      });
     });
   }
 }

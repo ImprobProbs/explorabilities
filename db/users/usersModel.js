@@ -1,10 +1,11 @@
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
-const db = require('./database.js');
+const db = require('../database.js');
 
 const User = db.define('user', {
   email: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    unique: true
   },
   password: {
     type: Sequelize.STRING
@@ -16,7 +17,9 @@ User.generateHash = (password) => {
 };
 
 User.validatePW = (enteredPW, storedPW) => {
-  return bcrypt.compareSync(enteredPW, storedPW)
+  return bcrypt.compareSync(enteredPW, storedPW);
 };
+
+db.sync();
 
 module.exports = User;

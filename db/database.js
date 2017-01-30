@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const cfg = require('./dbconfig_gitignoreme.js')
+const cfg = require('./dbconfig_gitignoreme.js');
 
 const sequelize = new Sequelize(cfg.myLocalDB, cfg.myLocalDBRole, cfg.myLocalDBPW, {
   host: 'localhost',
@@ -20,4 +20,4 @@ sequelize
     console.log('Unable to connect to the database:', err);
   });
 
-  module.exports = sequelize;
+module.exports = sequelize;

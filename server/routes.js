@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const userCtrl = require('./userController.js');
+const userCtrl = require('../db/users/usersController.js');
 const routes = express();
 
 //Parse incoming body

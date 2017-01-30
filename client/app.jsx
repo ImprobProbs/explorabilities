@@ -1,9 +1,10 @@
 import React from 'react';
-import reactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import Nav from './components/Nav.jsx';
-import ItineraryList from './components/itineraryList.jsx';
 import MapContainer from './components/MapContainer.jsx';
 import Place from './components/Place.jsx';
+import ItineraryList from './components/itineraryList.jsx';
+
 import data from "./stubs.js";
 
 export default class App extends React.Component {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      place: '',
       data: [
         {
           "city": "SF",
@@ -38,13 +40,18 @@ export default class App extends React.Component {
       <div id="exploreBody">
         <div id="exploreContainer">
           <Nav />
-          <MapContainer />
+          <MapContainer updatePlace={this.updatePlace.bind(this)}/>
           <div id="exploreContent" className="clearfix">
-            <Place />
-            <ItineraryList list = {this.state.data}/>
+            <Place place={this.state.place}/>
+            <ItineraryList list={this.state.data}/>
           </div>
         </div>
       </div>
     );
+  }
+
+  updatePlace(place) {
+    console.log('Place set');
+    console.log(place);
   }
 }

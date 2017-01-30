@@ -1,4 +1,4 @@
-const User = require('./db/users.js');
+const User = require('./usersModel.js');
 
 const controller = {
   signin: (req, res, next) => {
@@ -8,8 +8,7 @@ const controller = {
         email: req.query.email
       }
     }).then((user) => {
-      console.log(req.query.password);
-      console.log(user.password);
+      console.log(User.validatePW(req.query.password, user.password));
       if (user && User.validatePW(req.query.password, user.password)) {
         return res.sendStatus(200);
       }
@@ -17,12 +16,14 @@ const controller = {
     });
   },
   create: (req, res, next) => {
+    const password = User.generateHash(req.body.password);
     User.findOrCreate({
       where: {
         email: req.body.email,
-        password: req.body.password
+        password: password
       }
     }).spread((user, created) => {
+
       if (created) {
         console.log('User was successfully created');
         return res.sendStatus(201);
@@ -30,6 +31,8 @@ const controller = {
         return res.status(403).send('User taken');
       }
     });
+
+    //catch error for user already exists
   }
 };
 
