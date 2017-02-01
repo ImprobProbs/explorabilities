@@ -54,6 +54,8 @@ export default class MapContainer extends React.Component {
     /* ################### Map Init ################### */
     let map, places, autocomplete;
     let markers = [];
+    const searchForm = document.getElementById('searchForm');
+
 
     function initMap() {
       const sanFrancisco = {lat: 37.775, lng: -122.42};
@@ -82,7 +84,8 @@ export default class MapContainer extends React.Component {
         map.setZoom(15);
         search();
       } else {
-        document.getElementById('autocomplete').placeholder = 'Enter a city';
+        searchForm.placeholder = "Enter Your Destination (E.g. Cancun, Mexico)";
+        searchForm.value = '';
       }
     }
 
@@ -124,7 +127,7 @@ export default class MapContainer extends React.Component {
               size: new google.maps.Size(71, 71),
               origin: new google.maps.Point(0, 0),
               anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
+              scaledSize: new google.maps.Size(20, 20)
             };
             // Use marker animation to drop the icons incrementally on the map.
             markers[i] = new google.maps.Marker({
@@ -135,7 +138,7 @@ export default class MapContainer extends React.Component {
             // If the user clicks a marker, call setPlace to update the object in the Place component.
             markers[i].placeResult = results[i];
             google.maps.event.addListener(markers[i], 'click', setPlace);
-            setTimeout(dropMarker(i), i * 100);
+            setTimeout(dropMarker(i), i * 10);
           }
         }
       });
