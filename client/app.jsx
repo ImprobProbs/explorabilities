@@ -15,18 +15,21 @@ export default class App extends React.Component {
       place: '',
       data: [
         {
+          "id": 1,
           "city": "SF",
           "state": "CA",
           "thingsToEat": ["california pizza", "sushirito"],
           "hotSpot": ["Golden Gate Bridge", "Piers 19", "Muir Woods"]
         },
         {
+          "id": 2,
           "city": "Oakland",
           "state": "CA",
           "thingsToEat": ["Sushi", "Barbeque Chicken"],
           "hotSpot": ["Lake Meritt", "Broadway St"]
         },
         {
+          "id": 3,
           "city": "NYC",
           "state": "NY",
           "thingsToEat": ["Buffalo Wings", "New York Pizza"],
