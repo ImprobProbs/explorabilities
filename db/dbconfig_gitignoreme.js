@@ -1,5 +1,6 @@
 module.exports = {
-  myLocalDB: 'Drock',
-  myLocalDBRole: 'Drock',
+  myLocalDB: 'tenzinsonam',
+  myLocalDBRole: 'member',
   myLocalDBPW: ''
+
 };
