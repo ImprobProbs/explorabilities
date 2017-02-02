@@ -13,13 +13,15 @@ export default class MapContainer extends React.Component {
     return (
       <div>
         <form>
+          <label id="searchLabel">
+            <img src="img/magnifying-glass.png"/>
+          </label>
           <input
             id="searchForm"
             type="text"
             placeholder="Enter Your Destination (E.g. Cancun, Mexico)"
             onChange={this.updateQuery.bind(this)}
           />
-          <button type="submit" id="exploreButton">Explore!</button>
         </form>
         <div id="googleMaps"></div>
       </div>

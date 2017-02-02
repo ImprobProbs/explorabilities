@@ -8,19 +8,20 @@ export default class Nav extends React.Component {
 
   render() {
     return (
-      <nav>
-        <Link to="myplaces">
-          My Places
-        </Link>
-        &nbsp;|&nbsp;
-        <Link to="explore">
-          Explore!
-        </Link>
-        &nbsp;|&nbsp;
-        <Link to="auth/signin">
-          Log Out
-        </Link>
-      </nav>
+      <div className="clearfix nav">
+        <h2 className="beautify nav-title">Explorabilities</h2>
+        <nav>
+          <Link to="myplaces">
+            <button>My Places</button>
+          </Link>
+          <Link to="explore">
+            <button>Explore!</button>
+          </Link>
+          <Link to="auth/signin">
+            <button>Log Out</button>
+          </Link>
+        </nav>
+      </div>
     );
   }
 }
