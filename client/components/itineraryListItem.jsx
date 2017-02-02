@@ -4,10 +4,11 @@ const ItineraryListItem = (props) => {
   return (
     <li className="itineraryItem">
       <div>
-         <label>City:</label><a href ="#">{props.city}</a><br/>
-         <label>State:</label><a href ="#">{props.state}</a><br/>
-         <label>Things To Eat: </label><a href ="#">{props.thingsToEat}</a><br/>
-         <label>Hot Spot: </label><a href ="#">{props.hotSpot}</a>
+        <h4>Place: <a href ="#">{props.name}</a></h4><br/>
+        <label>Address:</label><a href ="#">{props.address}</a><br/>
+        <label>Phone:</label><a href ="#">{props.phone}</a><br/>
+        <label>Rating: </label><a href ="#">{props.rating}</a><br/>
+        <label>Website: </label><a href ="#">{props.website}</a>
       </div>
       <div>
         <input type="button" value="Remove" />
