@@ -9,6 +9,10 @@ const ItineraryListItem = (props) => {
          <label>Things To Eat: </label><a href ="#">{props.thingsToEat}</a><br/>
          <label>Hot Spot: </label><a href ="#">{props.hotSpot}</a>
       </div>
+      <div>
+        <input type="button" value="Remove" />
+        <input type="button" value="Save" />
+      </div>
     </li>
   );
 };
