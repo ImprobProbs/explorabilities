@@ -7,7 +7,7 @@ const routes = express();
 routes.use(bodyParser.urlencoded({extended: false}));
 routes.use(bodyParser.json());
 
-routes.use(express.static('../public'));
+routes.use(express.static(__dirname + '/../public'));
 
 routes.get('/users/signin', userCtrl.signin);
 routes.post('/users/create', userCtrl.create);
