@@ -11,3 +11,6 @@ public/bundle.js
 
 ## API keys ##
 client/config/keys.js
+
+
+db/dbconfig.js

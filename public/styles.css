@@ -25,6 +25,7 @@ h1 {
   font-size: 50px;
 }
 
+
 .container {
   width: 980px;
   min-height: 100%;
@@ -43,7 +44,7 @@ h1 {
   margin: 20px auto;
 }
 
-#exploreBody {
+#contentBody {
   padding: 20px;
 }
 

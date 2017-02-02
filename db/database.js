@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const cfg = require('./dbconfig_gitignoreme.js');
+const cfg = require('./dbconfig.js');
 
 const sequelize = new Sequelize(cfg.myLocalDB, cfg.myLocalDBRole, cfg.myLocalDBPW, {
   host: 'localhost',
