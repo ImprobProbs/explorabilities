@@ -10,8 +10,8 @@ const ItineraryListItem = (props) => {
          <label>Hot Spot: </label><a href ="#">{props.hotSpot}</a>
       </div>
     </li>
-  )
-}
+  );
+};
 
 
 export default ItineraryListItem;

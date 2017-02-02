@@ -7,14 +7,14 @@ const ItineraryList = (props)  => {
       <h3 className="itineraryHeader">Itinerary List</h3>
       <ul>
         {
-          props.list.map((listItem) =>
+          props.list.map((listItem) => (
           <ItineraryListItem
             key={listItem.id}
             city={listItem.city}
             state={listItem.state}
             thingsToEat={listItem.thingsToEat}
             hotSpot={listItem.hotSpot}
-          />)
+          />))
         }
       </ul>
     </div>
