@@ -47,6 +47,10 @@ h1 {
   padding: 20px;
 }
 
+#exploreContent {
+  padding-top: 20px;
+}
+
 #mapEmbed {
   width: 100%;
   height: 400px;
@@ -99,19 +103,18 @@ h1 {
 }
 
 #itinerary, #place {
+  background-color: white;
   height: 350px;
-  width: 40%;
+  width: 49%;
   border-radius: 5px;
 }
 
 #itinerary {
   float: right;
-  background-color: blue;
 }
 
 #place {
   float: left;
-  background-color: green;
 }
 
 #authBody {
