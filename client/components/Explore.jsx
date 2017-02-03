@@ -61,19 +61,20 @@ export default class Explore extends React.Component {
   }
 
   saveItinerary() {
-    console.log(this.state.query, 'query');
-    console.log(this.state.itinerary, 'itinerary');
-    const body = JSON.stringify(this.state);
+    const context = this;
 
     axios.post('/itinerary', {
-      body: body
+      // user: session user
+      itineraryID: this.state.query.id,
+      placeIDs: Object.keys(this.state.itinerary)
     })
     .then(function(response) {
       console.log(response.data);
       console.log(response.status);
       //Display 'it saved' message
 
-    }).catch(function(error) {
+    })
+    .catch(function(error) {
       context.setState({
         error: error.response.data
       });

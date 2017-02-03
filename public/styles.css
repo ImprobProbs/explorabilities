@@ -105,7 +105,6 @@ button {
 }
 
 .itineraryItem {
-  box-sizing: border-box;
   margin: 20px 0px 30px 0px;
   font-size: 12px;
   border-bottom: 6px solid red;
@@ -154,15 +153,12 @@ button {
   min-height: 100px;
   width: 49%;
   border-radius: 5px;
+  max-height: 700px;
+  overflow-y: auto;
 }
 
 #placeContent {
   padding: 15px;
-}
-
-#itinerary {
-  max-height: 500px;
-  overflow-y: auto;
 }
 
 #authHeader {
