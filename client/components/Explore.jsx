@@ -35,6 +35,7 @@ export default class Explore extends React.Component {
     this.setState({
       place: place
     });
+    console.log(place);
   }
 
   updateQuery(query) {

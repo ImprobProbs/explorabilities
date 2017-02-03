@@ -1,8 +1,27 @@
 import React from 'react';
+import Review from './Review.jsx';
 
 export default class Place extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  renderReviews () {
+    if (!this.props.reviews) {
+      return this.props.place.reviews.map((review, index) =>
+        <Review
+          key={index}
+          review={review.text}
+          reviewer={review.author_name}
+          rating={review.rating}
+          date={review.relative_time_description}
+        />
+      );
+    } else {
+      return (
+        <Review />
+      );
+    }
   }
 
   render() {
@@ -28,7 +47,11 @@ export default class Place extends React.Component {
                 </tr>
                 <tr id="place-website-row" className="place_row">
                   <td className="place_attribute_name">Website:</td>
-                  <td id="place-website">{this.props.place.website}</td>
+                  <td id="place-website"><a href={`${this.props.place.website}`}>{this.props.place.website}</a></td>
+                </tr>
+                <tr id="place-review-row" className="place_row">
+                  <td className="place_attribute_name">Reviews:</td>
+                  {this.renderReviews()}
                 </tr>
               </tbody>
             </table>
