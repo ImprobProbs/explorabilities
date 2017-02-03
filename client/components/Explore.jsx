@@ -49,7 +49,8 @@ export default class Explore extends React.Component {
   }
 
   updatePlace(place) {
-    console.log('Place set');
-    console.log(place);
+    this.setState({
+      place: place
+    });
   }
 }
