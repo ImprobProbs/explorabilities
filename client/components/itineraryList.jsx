@@ -4,7 +4,10 @@ import ItineraryListItem from './itineraryListItem.jsx';
 const ItineraryList = (props)  => {
   return (
     <div id="itinerary">
-      <h3 className="itineraryHeader">Itinerary List</h3>
+      <div className="clearfix">
+        <h3 className="itineraryHeader">Itinerary List</h3>
+        <button id="save-itinerary">Save Itinerary</button>
+      </div>
       <ul>
         {
           props.list.map((listItem) => (
