@@ -61,9 +61,12 @@ export default class Explore extends React.Component {
   }
 
   saveItinerary() {
-    console.log(this.state.query, 'query');
-    console.log(this.state.itinerary, 'itinerary');
-    const body = JSON.stringify(this.state);
+    let body = {
+      itineraryID: this.state.query.id,
+      placeIDs: Object.keys(this.state.itinerary)
+    };
+
+    // body = JSON.stringify(body);
 
     axios.post('/itinerary', {
       body: body
@@ -73,7 +76,8 @@ export default class Explore extends React.Component {
       console.log(response.status);
       //Display 'it saved' message
 
-    }).catch(function(error) {
+    })
+    .catch(function(error) {
       context.setState({
         error: error.response.data
       });
