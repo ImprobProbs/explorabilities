@@ -57,6 +57,8 @@ export default class Explore extends React.Component {
     this.setState({
       itinerary: this.state.itinerary
     });
+    console.log('Place set');
+    console.log(place);
   }
 
   saveItinerary() {
