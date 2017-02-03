@@ -36,6 +36,12 @@ export default class Place extends React.Component {
         </div>
       );
     }
-    return <div></div>;
+    return (
+      <div id='place'>
+        <div id="placeContent">
+          <h3 className="placeHeader">Itinerary Item</h3>
+        </div>
+      </div>
+    );
   }
 }
