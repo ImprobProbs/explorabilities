@@ -3,6 +3,7 @@ import React from 'react';
 export default class Place extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props)
   }
 
   render() {
@@ -12,7 +13,7 @@ export default class Place extends React.Component {
           <tbody>
             <tr id="iw-url-row" className="iw_table_row">
               <td id="iw-icon" className="iw_table_icon"></td>
-              <td id="iw-url"></td>
+              <td id="iw-url">{this.props.place.formatted_address}</td>
             </tr>
             <tr id="iw-address-row" className="iw_table_row">
               <td className="iw_attribute_name">Address:</td>
@@ -32,6 +33,7 @@ export default class Place extends React.Component {
             </tr>
           </tbody>
         </table>
+        <input type="button" value="Add to My Itinerary" />
       </div>
     );
   }

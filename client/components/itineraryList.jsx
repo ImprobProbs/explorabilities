@@ -10,9 +10,11 @@ const ItineraryList = (props)  => {
           props.list.map((listItem) => (
           <ItineraryListItem
             key={listItem.id}
-            city={listItem.city}
-            state={listItem.state}
-            thingsToEat={listItem.thingsToEat}
+            name={listItem.name}
+            address={listItem.formatted_address}
+            phone={listItem.international_phone_number}
+            rating={listItem.rating}
+            website={listItem.website}
             hotSpot={listItem.hotSpot}
           />))
         }
