@@ -66,8 +66,12 @@ export default class MapContainer extends React.Component {
 
       autocomplete.addListener('place_changed', onPlaceChanged);
 
-      map.addListener('dragend', search);
-      map.addListener('zoom_changed', search);
+      map.addListener('dragend', zoomFilter);
+      map.addListener('zoom_changed', zoomFilter);
+    }
+
+    function zoomFilter() {
+      if (map.getZoom() > 10) { search(); }
     }
 
     // When the user selects a city, get the place details for the city and
@@ -82,7 +86,7 @@ export default class MapContainer extends React.Component {
         map.setZoom(15);
         search();
       } else {
-        searchForm.placeholder = "Enter Your Destination (E.g. Cancun, Mexico)";
+        // searchForm.placeholder = "Enter Your Destination (E.g. Cancun, Mexico)";
         searchForm.value = '';
       }
     }
