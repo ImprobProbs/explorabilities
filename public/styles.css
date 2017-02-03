@@ -89,6 +89,9 @@ nav {
 .itineraryItem {
   margin: 20px 0px 30px 0px;
   font-size: 12px;
+  border-bottom: 6px solid red;
+  background-color: lightgrey;
+  border-radius: 5px;
 }
 
 .itineraryHeader {

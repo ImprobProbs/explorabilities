@@ -31,6 +31,7 @@ export default class Place extends React.Component {
             </tr>
           </tbody>
         </table>
+        <input type="button" value="Add to My Itinerary" />
       </div>
     );
   }
