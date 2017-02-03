@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import MapContainer from './MapContainer.jsx';
 import Place from './Place.jsx';
 import ItineraryList from './itineraryList.jsx';
@@ -61,5 +62,20 @@ export default class Explore extends React.Component {
   saveItinerary() {
     console.log(this.state.query, 'query');
     console.log(this.state.itinerary, 'itinerary');
+    const body = JSON.stringify(this.state);
+
+    axios.post('/itinerary', {
+      body: body
+    })
+    .then(function(response) {
+      console.log(response.data);
+      console.log(response.status);
+      //Display 'it saved' message
+
+    }).catch(function(error) {
+      context.setState({
+        error: error.response.data
+      });
+    });
   }
 }
