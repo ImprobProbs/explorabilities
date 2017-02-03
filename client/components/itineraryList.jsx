@@ -4,20 +4,19 @@ import ItineraryListItem from './itineraryListItem.jsx';
 const ItineraryList = (props)  => {
   return (
     <div id="itinerary">
-      <h3 className="itineraryHeader">Itinerary List</h3>
+      <div className="clearfix">
+        <h3 className="itineraryHeader">Itinerary List</h3>
+        <button id="save-itinerary">Save Itinerary</button>
+      </div>
       <ul>
-        {
-          props.list.map((listItem) => (
-          <ItineraryListItem
-            key={listItem.id}
-            name={listItem.name}
-            address={listItem.formatted_address}
-            phone={listItem.international_phone_number}
-            rating={listItem.rating}
-            website={listItem.website}
-            hotSpot={listItem.hotSpot}
-          />))
-        }
+        {Object.keys(props.list).map((key) => (
+            <ItineraryListItem
+              key={props.list[key].id}
+              place={props.list[key]}
+              //Binding list[key].id so it is the first argument when RemoveItem is called
+              removeItem={props.removeItem.bind(this, props.list[key].id)}
+            />
+          ))}
       </ul>
     </div>
   );

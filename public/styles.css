@@ -5,11 +5,6 @@ html, body {
   box-sizing: border-box;
 }
 
-html {
-  /*background: #c2e59c;
-  background: linear-gradient(to bottom right, #64b3f4, #c2e59c);*/
-}
-
 body {
   background: url('img/beach.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -37,8 +32,12 @@ button {
   height: 30px;
 }
 
-nav {
+#itinerary, nav, #itinerary button, #place button {
   float: right;
+}
+
+#place, .nav-title, .itineraryHeader {
+  float: left;
 }
 
 .container {
@@ -86,8 +85,22 @@ nav {
   height: 400px;
 }
 
+#itinerary ul {
+  padding: 0;
+  margin: 15px;
+  list-style: none;
+}
+
+#itinerary li {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#save-itinerary {
+  margin: 15px 15px 0 0;
+}
+
 .itineraryItem {
-  margin: 20px 0px 30px 0px;
   font-size: 12px;
   border-bottom: 6px solid red;
   background-color: lightgrey;
@@ -95,6 +108,7 @@ nav {
 }
 
 .itineraryHeader {
+  padding: 15px 15px 0 15px;
   text-align: center;
   color: grey;
 }
@@ -130,17 +144,18 @@ nav {
 
 #itinerary, #place {
   background-color: white;
-  height: 350px;
+  min-height: 350px;
   width: 49%;
   border-radius: 5px;
 }
 
-#itinerary {
-  float: right;
+#placeContent {
+  padding: 15px;
 }
 
-#place {
-  float: left;
+#itinerary {
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 #authHeader {
@@ -202,10 +217,6 @@ nav {
 .nav {
   padding-bottom: 10px;
   border-bottom: 1px solid white;
-}
-
-.nav-title {
-  float: left;
 }
 
 .clearfix:after {
