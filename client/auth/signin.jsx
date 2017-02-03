@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+
 export default class Signin extends React.Component {
   constructor (props) {
     super(props);
@@ -28,7 +29,7 @@ export default class Signin extends React.Component {
   }
 
   handleSubmit (e) {
-    console.log(this);
+    // console.log(this);
     e.preventDefault();
     const email = e.target.querySelector('[name="email"]').value;
     const password = e.target.querySelector('[name="password"]').value;
@@ -41,11 +42,12 @@ export default class Signin extends React.Component {
       }
     })
     .then(function(response) {
-      if (response.status === 200) {
-        this.context.router.transitionTo('/');
+      if (response.status == 200) {
+        context.props.router.push('/explore');
       }
     })
     .catch((err) => {
+      console.log('ERROR', err)
       context.setState({
         error: err.response.data
       });
