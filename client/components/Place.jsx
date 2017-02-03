@@ -8,27 +8,26 @@ export default class Place extends React.Component {
   render() {
     return (
       <div id='place'>
+        {console.log('place in place ', this.props.place)}
+        <h2>{this.props.place.name}</h2>
+        {/* <img src={this.props.place.photos[0].getUrl()}/> */}
         <table>
           <tbody>
-            <tr id="iw-url-row" className="iw_table_row">
-              <td id="iw-icon" className="iw_table_icon"></td>
-              <td id="iw-url"></td>
+            <tr id="place-address-row" className="place_row">
+              <td className="place_attribute_name">Address:</td>
+              <td id="place-address">{this.props.place.formatted_address}</td>
             </tr>
-            <tr id="iw-address-row" className="iw_table_row">
-              <td className="iw_attribute_name">Address:</td>
-              <td id="iw-address"></td>
+            <tr id="place-phone-row" className="place_row">
+              <td className="place_attribute_name">Telephone:</td>
+              <td id="place-phone">{this.props.place.formatted_phone_number}</td>
             </tr>
-            <tr id="iw-phone-row" className="iw_table_row">
-              <td className="iw_attribute_name">Telephone:</td>
-              <td id="iw-phone"></td>
+            <tr id="place-rating-row" className="place_row">
+              <td className="place_attribute_name">Rating:</td>
+              <td id="place-rating">{this.props.place.rating}</td>
             </tr>
-            <tr id="iw-rating-row" className="iw_table_row">
-              <td className="iw_attribute_name">Rating:</td>
-              <td id="iw-rating"></td>
-            </tr>
-            <tr id="iw-website-row" className="iw_table_row">
-              <td className="iw_attribute_name">Website:</td>
-              <td id="iw-website"></td>
+            <tr id="place-website-row" className="place_row">
+              <td className="place_attribute_name">Website:</td>
+              <td id="place-website">{this.props.place.website}</td>
             </tr>
           </tbody>
         </table>
