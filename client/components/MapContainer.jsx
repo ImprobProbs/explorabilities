@@ -59,12 +59,15 @@ export default class MapContainer extends React.Component {
 
       autocomplete = new google.maps.places.Autocomplete((
           document.getElementById('searchForm')), {
-            types: ['(cities)']
+            types: ['(regions)']
           });
 
       places = new google.maps.places.PlacesService(map);
 
       autocomplete.addListener('place_changed', onPlaceChanged);
+
+      map.addListener('dragend', search);
+      map.addListener('zoom_changed', search);
     }
 
     // When the user selects a city, get the place details for the city and
@@ -75,6 +78,7 @@ export default class MapContainer extends React.Component {
 
       if (place.geometry) {
         map.panTo(place.geometry.location);
+        // console.log(map.getCenter().toUrlValue())
         map.setZoom(15);
         search();
       } else {
