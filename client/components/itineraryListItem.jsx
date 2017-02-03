@@ -5,11 +5,11 @@ const ItineraryListItem = ({place, removeItem}) => {
     <li className="itineraryItem">
       <button onClick={removeItem}>Remove</button>
       <div>
-        <h4>Place: <a href ="#">{place.name}</a></h4><br/>
-        <label>Address:</label><a href ="#">{place.address}</a><br/>
-        <label>Phone:</label><a href ="#">{place.phone}</a><br/>
-        <label>Rating: </label><a href ="#">{place.rating}</a><br/>
-        <label>Website: </label><a href ="#">{place.website}</a>
+        <h4>Place: {place.name}</h4><br/>
+        <label>Address: </label>{place.formatted_address}<br/>
+        <label>Phone: </label>{place.formatted_phone_number}<br/>
+        <label>Rating: </label>{place.rating}<br/>
+        <a target="_blank" href={place.website}><label>Website</label></a>
       </div>
     </li>
   );

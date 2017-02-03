@@ -2,18 +2,26 @@ import React from 'react';
 import ItineraryListItem from './itineraryListItem.jsx';
 
 const ItineraryList = (props)  => {
+  let headerText = 'Itinerary';
+  let saveButton = '';
+  if (props.query.name) {
+    headerText += ' for ' + props.query.name;
+  }
+  if (Object.keys(props.list).length > 0) {
+    saveButton = <button id="save-itinerary" onClick={props.saveItinerary}>Save Itinerary</button>;
+  }
   return (
     <div id="itinerary">
       <div className="clearfix">
-        <h3 className="itineraryHeader">Itinerary List</h3>
-        <button id="save-itinerary">Save Itinerary</button>
+        <h3 className="itineraryHeader">{headerText}</h3>
+        {saveButton}
       </div>
       <ul>
         {Object.keys(props.list).map((key) => (
             <ItineraryListItem
               key={props.list[key].id}
               place={props.list[key]}
-              //Binding list[key].id so it is the first argument when RemoveItem is called
+              /* Binding list[key].id as the first argument when RemoveItem is called */
               removeItem={props.removeItem.bind(this, props.list[key].id)}
             />
           ))}
