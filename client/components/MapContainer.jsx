@@ -4,9 +4,6 @@ import axios from 'axios';
 export default class MapContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      query: 'Cancun'
-    };
   }
 
   render() {
@@ -19,8 +16,7 @@ export default class MapContainer extends React.Component {
           <input
             id="searchForm"
             type="text"
-            placeholder="Enter Your Destination (E.g. Cancun, Mexico)"
-            onChange={this.updateQuery.bind(this)}
+            placeholder="Enter a Destination (E.g. Cancun, Mexico)"
           />
         </form>
         <div id="googleMaps"></div>
@@ -30,12 +26,6 @@ export default class MapContainer extends React.Component {
 
   componentDidMount() {
     this.createMap();
-  }
-
-  updateQuery(e) {
-    this.setState({
-      query: e.target.value
-    });
   }
 
   createMap() {
@@ -81,6 +71,8 @@ export default class MapContainer extends React.Component {
     // zoom the map in on the city.
     function onPlaceChanged() {
       const place = autocomplete.getPlace();
+      context.props.updateQuery(place);
+
       if (place.geometry) {
         map.panTo(place.geometry.location);
         map.setZoom(15);

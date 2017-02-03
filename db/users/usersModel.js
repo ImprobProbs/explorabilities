@@ -20,6 +20,4 @@ User.validatePW = (enteredPW, storedPW) => {
   return bcrypt.compareSync(enteredPW, storedPW);
 };
 
-db.sync();
-
 module.exports = User;
