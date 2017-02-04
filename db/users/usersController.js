@@ -27,7 +27,9 @@ const controller = {
     const password = User.generateHash(req.body.password);
     User.findOrCreate({
       where: {
-        email: req.body.email,
+        email: req.body.email
+      },
+      defaults: {
         password: password
       }
     }).spread(function(user, created) {

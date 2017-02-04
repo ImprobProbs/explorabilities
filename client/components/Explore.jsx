@@ -64,7 +64,7 @@ export default class Explore extends React.Component {
     const context = this;
 
     axios.post('/itinerary', {
-      // user: session user
+      token: localStorage.token,
       itineraryID: this.state.query.id,
       placeIDs: Object.keys(this.state.itinerary)
     })
