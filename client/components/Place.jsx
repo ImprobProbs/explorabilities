@@ -8,15 +8,19 @@ export default class Place extends React.Component {
 
   renderReviews () {
     if (!this.props.reviews) {
-      return this.props.place.reviews.map((review, index) =>
-        <Review
-          key={index}
-          review={review.text}
-          reviewer={review.author_name}
-          rating={review.rating}
-          date={review.relative_time_description}
-        />
-      );
+      if (this.props.place.reviews) {
+        return this.props.place.reviews.map((review, index) =>
+          <Review
+            key={index}
+            review={review.text}
+            reviewer={review.author_name}
+            rating={review.rating}
+            date={review.relative_time_description}
+          />
+        );
+      } else {
+        return;
+      }
     } else {
       return (
         <Review />
