@@ -54,17 +54,25 @@ export default class MapContainer extends React.Component {
 
       map = new google.maps.Map(document.getElementById('googleMaps'), {
         center: sanFrancisco,
-        zoom: 8
+        zoom: 8,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
       });
 
       autocomplete = new google.maps.places.Autocomplete((
           document.getElementById('searchForm')), {
-            types: ['(regions)']
+            types: ['geocode']
           });
 
       places = new google.maps.places.PlacesService(map);
 
       autocomplete.addListener('place_changed', onPlaceChanged);
+
+      map.addListener('dragend', zoomFilter);
     }
 
     function zoomFilter() {
@@ -77,11 +85,9 @@ export default class MapContainer extends React.Component {
       const place = autocomplete.getPlace();
       context.props.updateQuery(place);
 
-      map.addListener('dragend', zoomFilter);
-      map.addListener('zoom_changed', zoomFilter);
       if (place.geometry) {
         map.panTo(place.geometry.location);
-        // console.log(map.getCenter().toUrlValue())
+        console.log(map.getCenter().toUrlValue());
         map.setZoom(15);
         search();
       } else {
@@ -105,12 +111,12 @@ export default class MapContainer extends React.Component {
           'campground',
           'casino',
           'library',
-          'lodging',
+          //'lodging',
           'movie_theater',
           'museum',
           'night_club',
           'park',
-          'restaurant',
+          //'restaurant',
           'spa',
           'stadium',
           'zoo'
@@ -120,7 +126,6 @@ export default class MapContainer extends React.Component {
       places.nearbySearch(search, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           clearMarkers();
-
           // Create a marker for each item found
           for (var i = 0; i < results.length; i++) {
             let iconImage = {
@@ -128,7 +133,7 @@ export default class MapContainer extends React.Component {
               size: new google.maps.Size(71, 71),
               origin: new google.maps.Point(0, 0),
               anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(20, 20)
+              scaledSize: new google.maps.Size(15, 15)
             };
             // Use marker animation to drop the icons incrementally on the map.
             markers[i] = new google.maps.Marker({
