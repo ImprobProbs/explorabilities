@@ -1,4 +1,6 @@
 const User = require('./usersModel.js');
+const jwt = require('jsonwebtoken');
+const dbconfig = require('../dbconfig.js');
 
 const controller = {
   signin: function(req, res, next) {
@@ -8,9 +10,15 @@ const controller = {
         email: req.query.email
       }
     }).then(function(user) {
-      console.log(User.validatePW(req.query.password, user.password));
       if (user && User.validatePW(req.query.password, user.password)) {
-        return res.sendStatus(200);
+        const token = jwt.sign({user: user.email}, dbconfig.secret, {
+          expiresIn: 86400 // expires in 24 hours
+        });
+
+        return res.json({
+          success: true,
+          token: token
+        });
       }
       return res.status(403).send('Invalid e-mail or password');
     });
@@ -25,8 +33,16 @@ const controller = {
     }).spread(function(user, created) {
       if (created) {
         console.log('User was successfully created');
-        return res.sendStatus(201);
+        const token = jwt.sign({user: user.email}, dbconfig.secret, {
+          expiresIn: 86400 // expires in 24 hours
+        });
+
+        return res.json({
+          success: true,
+          token: token
+        });
       } else {
+        return res.sendStatus(500);
       }
     }).catch(function(err) {
       if (err.original.code === '23505') {
