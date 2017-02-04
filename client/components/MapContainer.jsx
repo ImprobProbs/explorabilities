@@ -65,9 +65,6 @@ export default class MapContainer extends React.Component {
       places = new google.maps.places.PlacesService(map);
 
       autocomplete.addListener('place_changed', onPlaceChanged);
-
-      map.addListener('dragend', zoomFilter);
-      map.addListener('zoom_changed', zoomFilter);
     }
 
     function zoomFilter() {
@@ -80,6 +77,8 @@ export default class MapContainer extends React.Component {
       const place = autocomplete.getPlace();
       context.props.updateQuery(place);
 
+      map.addListener('dragend', zoomFilter);
+      map.addListener('zoom_changed', zoomFilter);
       if (place.geometry) {
         map.panTo(place.geometry.location);
         // console.log(map.getCenter().toUrlValue())
