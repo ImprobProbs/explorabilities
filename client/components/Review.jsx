@@ -7,7 +7,6 @@ const Review = (props) => {
   return (
     <div id="place-address">
       <em>{props.reviewer}</em><br/>
-      <h4>Rating from state: {rating}</h4>
       <StarRatingComponent
         name="rate2"
         editing={false}

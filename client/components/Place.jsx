@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from './Review.jsx';
+import StarRatingComponent from 'react-star-rating-component';
 
 export default class Place extends React.Component {
   constructor(props) {
@@ -47,7 +48,16 @@ export default class Place extends React.Component {
                 </tr>
                 <tr id="place-rating-row" className="place_row">
                   <td className="place_attribute_name">Rating:</td>
-                  <td id="place-rating">{this.props.place.rating}</td>
+                  <td id="place-rating">
+                    <StarRatingComponent
+                      name="rate2"
+                      editing={false}
+                      renderStarIcon={() => <span></span>}
+                      starCount={5}
+                      value={this.props.place.rating}
+                    />
+                  </td>
+
                 </tr>
                 <tr id="place-website-row" className="place_row">
                   <td className="place_attribute_name">Website:</td>
