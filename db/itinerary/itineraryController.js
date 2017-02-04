@@ -6,36 +6,26 @@ const controller = {
   save: function(req, res, next) {
     const token = req.body.token;
     const placeIDs = req.body.placeIDs;
+    const itineraryID = req.body.itineraryID;
     const payload = jwt.verify(token, dbconfig.secret);
-    const user = payload.user;
+    const itineraryItems = [];
 
     placeIDs.forEach(function(placeID) {
-      console.log(placeID);
+      itineraryItems.push({
+        placeID: placeID,
+        itineraryID: itineraryID,
+        userId: payload.id
+      });
     });
 
-    // Itinerary.create({
-    //   itineraryID: req.body.itineraryID,
-    //   password: password
-    // }).spread(function(user, created) {
-    //   if (created) {
-    //     console.log('User was successfully created');
-    //     const token = jwt.sign({user: user.email}, dbconfig.secret, {
-    //       expiresIn: 86400 // expires in 24 hours
-    //     });
-    //
-    //     return res.json({
-    //       success: true,
-    //       token: token
-    //     });
-    //   } else {
-    //     return res.sendStatus(500);
-    //   }
-    // }).catch(function(err) {
-    //   if (err.original.code === '23505') {
-    //     return res.status(403).send('That email address already exists, please login');
-    //   }
-    //   return res.sendStatus(500);
-    // });
+    Itinerary.bulkCreate(itineraryItems)
+    .then(function() {
+      return res.status(200).send('Itinerary successfully saved.');
+    })
+    .catch(function(err) {
+      console.log(err, 'error creating itinerary');
+      return res.sendStatus(500);
+    });
 
   },
   retreive: function(req, res, next) {
