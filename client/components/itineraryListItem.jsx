@@ -6,9 +6,9 @@ const ItineraryListItem = ({place, removeItem}) => {
     <li className="itineraryItem">
       <button onClick={removeItem}>Remove</button>
       <div>
-        <h3>Place: <a href ="#">{place.name}</a></h3><br/>
-        <label>Address:</label><a href ="#">{place.formatted_address}</a><br/>
-        <label>Phone:</label><a href ="#">{place.international_phone_number}</a><br/>
+        <h3>Place: <a href ={`${place.website}`}>{place.name}</a></h3><br/>
+        <label>Address: </label><span>{place.formatted_address}</span><br/>
+        <label>Phone: </label><span>{place.international_phone_number}</span><br/>
         <label>Rating: </label>
         <StarRatingComponent
           name="rate2"
