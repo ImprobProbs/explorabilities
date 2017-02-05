@@ -2,7 +2,6 @@ import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 const Review = (props) => {
-  console.log(props);
   const { rating } = props.rating;
   return (
     <div id="place-address">
