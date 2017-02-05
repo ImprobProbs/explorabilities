@@ -12,6 +12,7 @@ routes.use(express.static(__dirname + '/../public'));
 
 routes.get('/users/signin', userCtrl.signin);
 routes.post('/users/create', userCtrl.create);
+routes.get('/users/auth', userCtrl.authenticate);
 
 routes.get('/itinerary', itineraryCtrl.retreive);
 routes.post('/itinerary', itineraryCtrl.save);
