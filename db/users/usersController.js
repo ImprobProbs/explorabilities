@@ -23,6 +23,7 @@ const controller = {
       return res.status(403).send('Invalid e-mail or password');
     });
   },
+  
   create: function(req, res, next) {
     const password = User.generateHash(req.body.password);
     User.findOrCreate({
@@ -53,6 +54,18 @@ const controller = {
       return res.sendStatus(500);
     });
 
+  },
+
+  authenticate: function(req, res) {
+    //TODO: attach token to GET /users/auth and fish it out
+    let token = null; //req.authenticate.token or whatever!
+    jwt.verify(token, dbconfig.secret, { algorithms: ['RS256'] }, function(err, decoded) {
+      if (err) {
+        res.status(403).send('Invalid authentication token');
+      } else {
+        res.sendStatus(200);
+      }
+    });
   }
 };
 
