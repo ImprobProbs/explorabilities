@@ -23,10 +23,10 @@ const ItineraryList = (props)  => {
       <ul>
         {Object.keys(props.list).map((key) => (
             <ItineraryListItem
-              key={props.list[key].id}
+              key={props.list[key].place_id}
               place={props.list[key]}
               /* Binding list[key].id as the first argument when RemoveItem is called */
-              removeItem={props.removeItem.bind(this, props.list[key].id)}
+              removeItem={props.removeItem.bind(this, props.list[key].place_id)}
             />
           ))}
       </ul>

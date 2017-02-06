@@ -36,8 +36,17 @@ button {
   float: right;
 }
 
-#place, .nav-title, .itineraryHeader {
+#place, #itineraries, .nav-title, .itineraryHeader {
   float: left;
+}
+
+#myplace-itineraries {
+  padding: 15px;
+}
+
+#myplace-itineraries button {
+  width: 100px;
+  display: block;
 }
 
 .container {
@@ -69,7 +78,7 @@ button {
   top: 10px;
 }
 
-#exploreContent {
+#exploreContent, #myPlacesContent {
   padding-top: 20px;
 }
 
@@ -152,7 +161,7 @@ button {
   width: 80px;
 }
 
-#itinerary, #place {
+#itinerary, #place, #itineraries {
   background-color: rgba(255, 255, 255, 0.9);
   min-height: 100px;
   width: 49%;
