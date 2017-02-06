@@ -15,7 +15,7 @@ Find *your* places to eat, sleep and play.
 ## To start the app:
   * On the root folder, do npm start (to run the webpack)
   * On the server folder, run nodemon server.js (to start the server)
-  * Download Postgres App from ![postgresapp.com][https://postgresapp.com]
+  * Download Postgres App from [postgresapp.com](https://postgresapp.com)
   * Create db user and update dbconfig.js with db user credentials
   * Start the Postgres db
   * Open app in the browser by running (https://localhost:3000)
