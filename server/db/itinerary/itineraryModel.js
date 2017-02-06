@@ -9,7 +9,10 @@ const Itinerary = db.define('itinerary', {
   itineraryID: {
     type: Sequelize.STRING
   },
-  userId: {
+  itineraryName: {
+    type: Sequelize.STRING
+  },
+  userID: {
     type: Sequelize.INTEGER,
     model: 'users',
     key: 'id'
