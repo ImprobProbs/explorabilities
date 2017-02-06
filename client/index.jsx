@@ -17,26 +17,32 @@ ReactDOM.render(
       <Route path="/auth/signup" component={Signup}/>
     </Route>
     <Route path="/" component={App}>
-      <IndexRedirect to="/auth/signin"/>
+      <IndexRedirect to="/explore" />
       <Route path="/explore" component={Explore} onEnter={requireAuth}/>
       <Route path="/myplaces" component={MyPlaces} onEnter={requireAuth}/>
     </Route>
   </Router>, document.getElementById('app'));
 
-function requireAuth(nextState, replace) {
+const blah = () => { console.log("I'm here to make requireAuth asynchronous!"); };
+
+//verifies the user's token serverside.
+//check out line 60 in server/db/users/usersController.js
+function requireAuth(nextState, replace, blah) {
   axios.get('/users/auth', {
     headers: { token: localStorage.token || null }
   })
   .then((res) => {
     //res.data.user = user email
     //res.data.id = user id
-    if (res.status !== 200) {
-      replace({
-        pathname: '/auth/signin',
-        state: {
-          nextPathName: nextState.location.pathname
-        }
-      });
-    }
+    blah(); //requireauth doesn't exit until I'm called! I do nothing!
+  })
+  .catch((err) => {
+    replace({
+      pathname: '/auth/signin',
+      state: {
+        nextPathName: nextState.location.pathname
+      }
+    });
+    blah(); //I also do nothing!
   });
 }
