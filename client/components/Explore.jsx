@@ -49,7 +49,7 @@ export default class Explore extends React.Component {
   }
 
   addItem() {
-    this.state.itinerary[this.state.place.id] = this.state.place;
+    this.state.itinerary[this.state.place.place_id] = this.state.place;
     this.setState({
       itinerary: this.state.itinerary
     });
@@ -68,7 +68,7 @@ export default class Explore extends React.Component {
 
     axios.post('/itinerary', {
       token: localStorage.token,
-      itineraryID: this.state.query.id,
+      itineraryID: this.state.query.place_id,
       placeIDs: Object.keys(this.state.itinerary)
     })
     .then(function(res) {
