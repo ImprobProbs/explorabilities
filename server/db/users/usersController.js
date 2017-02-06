@@ -58,13 +58,12 @@ const controller = {
   },
 
   authenticate: function(req, res) {
-    //TODO: attach token to GET /users/auth and fish it out
-    let token = null; //req.authenticate.token or whatever!
-    jwt.verify(token, dbconfig.secret, { algorithms: ['RS256'] }, function(err, decoded) {
+    let token = req.headers.token;
+    jwt.verify(token, dbconfig.secret, function(err, payload) {
       if (err) {
         res.status(403).send('Invalid authentication token');
       } else {
-        res.sendStatus(200);
+        res.status(200).send({user: payload.user, id: payload.id});
       }
     });
   }

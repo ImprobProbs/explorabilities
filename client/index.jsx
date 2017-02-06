@@ -8,6 +8,7 @@ import Signin from './auth/signin.jsx';
 import Signup from './auth/signup.jsx';
 import Explore from './components/Explore.jsx';
 import MyPlaces from './components/MyPlaces.jsx';
+import axios from 'axios';
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -23,12 +24,19 @@ ReactDOM.render(
   </Router>, document.getElementById('app'));
 
 function requireAuth(nextState, replace) {
-  if (!authHelpers.loggedIn()) {
-    replace({
-      pathname: '/auth/signin',
-      state: {
-        nextPathname: nextState.location.pathname
-      }
-    });
-  }
+  axios.get('/users/auth', {
+    headers: { token: localStorage.token || null }
+  })
+  .then((res) => {
+    //res.data.user = user email
+    //res.data.id = user id
+    if (res.status !== 200) {
+      replace({
+        pathname: '/auth/signin',
+        state: {
+          nextPathName: nextState.location.pathname
+        }
+      });
+    }
+  });
 }
