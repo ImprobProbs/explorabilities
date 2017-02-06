@@ -13,4 +13,4 @@ public/bundle.js
 client/config/keys.js
 
 
-db/dbconfig.js
+server/db/dbconfig.js
