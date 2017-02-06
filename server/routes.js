@@ -17,4 +17,8 @@ routes.get('/users/auth', userCtrl.authenticate);
 routes.get('/itinerary', itineraryCtrl.retreive);
 routes.post('/itinerary', itineraryCtrl.save);
 
+routes.get('/*', function(req, res) {
+  res.redirect('/');
+});
+
 module.exports = routes;

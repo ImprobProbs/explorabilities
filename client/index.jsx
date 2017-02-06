@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, hashHistory, IndexRedirect} from 'react-router';
+import {Router, Route, browserHistory, IndexRedirect} from 'react-router';
 import App from './app.jsx';
 import Auth from './auth/auth.jsx';
 import authHelpers from './auth/auth-helpers.js';
@@ -10,7 +10,7 @@ import Explore from './components/Explore.jsx';
 import MyPlaces from './components/MyPlaces.jsx';
 
 ReactDOM.render(
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/auth" component={Auth}>
       <Route path="/auth/signin" component={Signin}/>
       <Route path="/auth/signup" component={Signup}/>
