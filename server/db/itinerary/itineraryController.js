@@ -7,6 +7,7 @@ const controller = {
     const token = req.body.token;
     const placeIDs = req.body.placeIDs;
     const itineraryID = req.body.itineraryID;
+    const itineraryName = req.body.itineraryName;
     const payload = jwt.verify(token, dbconfig.secret);
     const itineraryItems = [];
 
@@ -14,7 +15,8 @@ const controller = {
       itineraryItems.push({
         placeID: placeID,
         itineraryID: itineraryID,
-        userId: payload.id
+        itineraryName: itineraryName,
+        userID: payload.id
       });
     });
 
@@ -29,9 +31,22 @@ const controller = {
 
   },
   retreive: function(req, res, next) {
-    const token = req.body.token;
+    const token = req.query.token;
     const payload = jwt.verify(token, dbconfig.secret);
-    res.sendStatus(200);
+    console.log(payload.id);
+
+    Itinerary.findAll({
+      where: {
+        userID: payload.id
+      }
+    })
+    .then(function(itineraries) {
+      res.json(itineraries);
+    })
+    .catch(function(err) {
+      console.log(err, 'error creating itinerary');
+      return res.sendStatus(500);
+    });
   }
 };
 

@@ -37,19 +37,19 @@ export default class Explore extends React.Component {
     this.setState({
       place: place
     });
-    console.log(place);
   }
 
   updateQuery(query) {
     this.setState({
       place: {},
       query: query,
-      itinerary: {}
+      itinerary: {},
+      saveMessage: ''
     });
   }
 
   addItem() {
-    this.state.itinerary[this.state.place.id] = this.state.place;
+    this.state.itinerary[this.state.place.place_id] = this.state.place;
     this.setState({
       itinerary: this.state.itinerary
     });
@@ -65,10 +65,12 @@ export default class Explore extends React.Component {
 
   saveItinerary() {
     const context = this;
+    console.log(this.state.query, 'query');
 
     axios.post('/itinerary', {
       token: localStorage.token,
-      itineraryID: this.state.query.id,
+      itineraryID: this.state.query.place_id,
+      itineraryName: this.state.query.name,
       placeIDs: Object.keys(this.state.itinerary)
     })
     .then(function(res) {
