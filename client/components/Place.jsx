@@ -52,7 +52,6 @@ export default class Place extends React.Component {
                     <StarRatingComponent
                       name="rate2"
                       editing={false}
-                      renderStarIcon={() => <span></span>}
                       starCount={5}
                       value={this.props.place.rating}
                     />

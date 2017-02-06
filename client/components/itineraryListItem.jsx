@@ -13,11 +13,11 @@ const ItineraryListItem = ({place, removeItem}) => {
         <StarRatingComponent
           name="rate2"
           editing={false}
-          renderStarIcon={() => <span></span>}
           starCount={5}
           value={place.rating}
         />
         <br/>
+
         <label>Website: </label><a href ={`${place.website}`}>{place.website}</a>
       </div>
     </li>
