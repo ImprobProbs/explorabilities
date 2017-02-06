@@ -32,7 +32,7 @@ button {
   height: 30px;
 }
 
-#itinerary, nav, .save-itinerary, #place button {
+#itinerary, nav, .save-itinerary, #place button, .itineraryItem button {
   float: right;
 }
 
@@ -98,6 +98,10 @@ button {
 
 .save-itinerary {
   margin: 15px 15px 0 0;
+}
+
+.save-text {
+
 }
 
 .placeHeader {

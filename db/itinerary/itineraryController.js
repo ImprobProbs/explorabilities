@@ -29,7 +29,9 @@ const controller = {
 
   },
   retreive: function(req, res, next) {
-
+    const token = req.body.token;
+    const payload = jwt.verify(token, dbconfig.secret);
+    res.sendStatus(200);
   }
 };
 
