@@ -11,7 +11,8 @@ const controller = {
       }
     }).then(function(user) {
       if (user && User.validatePW(req.query.password, user.password)) {
-        const token = jwt.sign({user: user.email}, dbconfig.secret, {
+        //First argument in jwt.sign is the 'payload' which is used when saving an itinerary for the user
+        const token = jwt.sign({ user: user.email, id: user.id }, dbconfig.secret, {
           expiresIn: 86400 // expires in 24 hours
         });
 
@@ -36,7 +37,7 @@ const controller = {
     }).spread(function(user, created) {
       if (created) {
         console.log('User was successfully created');
-        const token = jwt.sign({user: user.email}, dbconfig.secret, {
+        const token = jwt.sign({ user: user.email, id: user.id }, dbconfig.secret, {
           expiresIn: 86400 // expires in 24 hours
         });
 

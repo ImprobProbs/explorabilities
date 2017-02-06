@@ -11,7 +11,8 @@ export default class Explore extends React.Component {
     this.state = {
       place: {},
       query: '',
-      itinerary: {}
+      itinerary: {},
+      saveMessage: ''
     };
   }
   render() {
@@ -23,6 +24,7 @@ export default class Explore extends React.Component {
           <ItineraryList
             list={this.state.itinerary}
             query={this.state.query}
+            saveMessage={this.state.saveMessage}
             removeItem={this.removeItem.bind(this)}
             saveItinerary={this.saveItinerary.bind(this)}
           />
@@ -56,7 +58,8 @@ export default class Explore extends React.Component {
   removeItem(key) {
     delete this.state.itinerary[key];
     this.setState({
-      itinerary: this.state.itinerary
+      itinerary: this.state.itinerary,
+      saveMessage: ''
     });
   }
 
@@ -68,16 +71,16 @@ export default class Explore extends React.Component {
       itineraryID: this.state.query.id,
       placeIDs: Object.keys(this.state.itinerary)
     })
-    .then(function(response) {
-      console.log(response.data);
-      console.log(response.status);
-      //Display 'it saved' message
-
+    .then(function(res) {
+      if (res.status === 200) {
+        context.setState({
+          saveMessage: 'Saved'
+        });
+        console.log(context.state.saveMessage);
+      }
     })
     .catch(function(error) {
-      context.setState({
-        error: error.response.data
-      });
+      console.log(error, 'error saving itinerary');
     });
   }
 }

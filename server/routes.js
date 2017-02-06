@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const userCtrl = require('../db/users/usersController.js');
-const itineraryCtrl = require('../db/itinerary/itineraryController.js');
+const userCtrl = require('./db/users/usersController.js');
+const itineraryCtrl = require('./db/itinerary/itineraryController.js');
 const routes = express();
 
 //Parse incoming body
