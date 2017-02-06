@@ -9,7 +9,6 @@ const Review = (props) => {
       <StarRatingComponent
         name="rate2"
         editing={false}
-        renderStarIcon={() => <span></span>}
         starCount={5}
         value={props.rating}
       />
