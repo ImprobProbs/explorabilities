@@ -45,8 +45,9 @@ button {
 }
 
 #myplace-itineraries button {
-  width: 100px;
+  width: 200px;
   display: block;
+  font-size: 14px;
 }
 
 .container {
