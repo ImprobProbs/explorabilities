@@ -6,14 +6,12 @@ Find *your* places to eat, sleep and play.
 
 ## For industrious developers:
 
-  * Clientside is done in React.
-  * Serverside is done in Express/Node.
-  * Used Sequelize as ORM
-  * Database is handled by Postgres. [The Postgres app](https://postgresapp.com/) is highly recommended for testing purposes.
+  * Clientside: React w/React Router
+  * Serverside: Express/Node
+  * Database: Postgres - [The Postgres app](https://postgresapp.com/) is highly recommended for testing purposes
+  * ORM: Sequelize
   * db/dbconfig.js requires some finagling. [Create a role](https://www.postgresql.org/docs/8.1/static/sql-createrole.html) on your database that has superuser and login privileges.
 
-
-> Explorabilities project description
 
 ## Team
 
@@ -31,9 +29,14 @@ Find *your* places to eat, sleep and play.
 1. [Team](#team)
 1. [Contributing](#contributing)
 
+
 ## Usage
 
-> Some usage instructions
+- Search for your favorite vacation spot
+- Checkout various points of interests with the Google Maps interface
+- Add the park/museum/restaurant/club to your itinerary
+- Save your itinerary for future access
+
 
 ## Requirements
 
@@ -53,9 +56,10 @@ From within the root directory:
 
 ```sh
 
-  * npm install
-  * On the root folder, do npm start (to run the webpack)
-  * On the server folder, run nodemon server.js (to start the server)
+  ~ npm install
+  ~ npm run build
+  ~ npm start
+  
   * Download Postgres App from [postgresapp.com](https://postgresapp.com)
   * Create db user and update dbconfig.js with db user credentials
   * Start the Postgres db
