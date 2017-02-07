@@ -65,4 +65,4 @@ From within the root directory:
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/ImprobProbs/explorabilities/CONTRIBUTING.md) for contribution guidelines.
+See [CONTRIBUTING.md](https://github.com/ImprobProbs/explorabilities/blob/master/CONTRIBUTING.md) for contribution guidelines.
