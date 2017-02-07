@@ -30,10 +30,10 @@ export default class Auth extends React.Component {
             })}
           </div>
           <div id="authNav">
-            <Link to="auth/signin">
+            <Link to="/auth/signin">
               <button>Signin</button>
             </Link>
-            <Link to="auth/signup">
+            <Link to="/auth/signup">
               <button>Signup</button>
             </Link>
           </div>
